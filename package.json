@@ -14,7 +14,9 @@
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@types/node": "^22.13.13",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
