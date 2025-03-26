@@ -18,6 +18,7 @@ const userSchema = new Schema(
       lowercase: true,
       unique: true,
       trim: true,
+      match: [/\S+@\S+\.\S+/, "Please enter a valid email"],
     },
     fullName: {
       type: String,
@@ -52,7 +53,7 @@ const userSchema = new Schema(
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
-  this.password =await bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
